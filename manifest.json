@@ -1,0 +1,31 @@
+{
+  "manifest_version": 2,
+  "name": "yinsec",
+  "version": "1.0",
+  "description": "Extension for enhanced security",
+  "permissions": [
+    "cookies",
+    "webRequest",
+    "webRequestBlocking",
+    "storage",
+    "https://*/*",
+	"http://*/*"
+  ],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": true
+  },
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html"
+  },
+  "icons": {
+    "48": "icon.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["popup.js"]
+    }
+  ]
+}
